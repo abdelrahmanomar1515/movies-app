@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { Show } from '../../../api/shows';
+import { Show } from '../types';
 
 defineProps<{ shows: Show[] }>()
 
-const count = ref(0)
 </script>
 
 <template></template>
