@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 const routes: RouteRecordRaw[] = [
-  { path: "/", redirect: "/movies" },
+  { path: "/", redirect: "/shows" },
   {
-    path: "/movies",
-    component: () => import("./modules/movies/pages/MoviesPage.vue"),
+    path: "/shows",
+    component: () => import("./modules/shows/pages/ShowsPage.vue"),
   },
   {
-    path: "/movies/:id",
-    component: () => import("./modules/movies/pages/MovieDetailsPage.vue"),
+    path: "/shows/:id",
+    component: () => import("./modules/shows/pages/ShowDetailsPage.vue"),
   },
 ];
 

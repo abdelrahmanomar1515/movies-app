@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Movie } from '../types';
+import { Show } from '../../../api/shows';
 
-defineProps<{ movies: Movie[] }>()
+defineProps<{ shows: Show[] }>()
 
 const count = ref(0)
 </script>

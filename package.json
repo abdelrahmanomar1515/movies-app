@@ -1,5 +1,5 @@
 {
-  "name": "abn-amro-task",
+  "name": "shows-app",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
