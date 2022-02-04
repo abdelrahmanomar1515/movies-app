@@ -8,7 +8,13 @@ defineProps<{ shows: Show[] }>()
 
 <template>
   <div class="container">
-    <ShowCard v-for="show in shows" :key="show.id" :show="show"></ShowCard>
+    <ShowCard
+      class="show-card"
+      v-for="show in shows"
+      :key="show.id"
+      :show="show"
+      :infoLink="'/shows/' + show.id"
+    ></ShowCard>
   </div>
 </template>
 
