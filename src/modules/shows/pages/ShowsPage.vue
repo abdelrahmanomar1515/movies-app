@@ -2,7 +2,7 @@
 import { debounce } from '@/utils/debounce';
 import { useShowsStore } from '../store';
 
-const { store, setSearchTerm } = useShowsStore()
+const { store, setSearchTerm, shows } = useShowsStore()
 const debouncedSearch = debounce(setSearchTerm)
 
 </script>
@@ -11,5 +11,7 @@ const debouncedSearch = debounce(setSearchTerm)
   <input type="text" @input="(event) => debouncedSearch(event.target?.value)" />
   <div v-if="store.showsLoading">Loading...</div>
   <div v-else-if="store.showsError">Ooops...</div>
-  <div v-else>{{ JSON.stringify(store.shows) }}</div>
+  <div v-else>
+    <div v-for="(show) in shows" :key="show.id">{{ show.name + ' | ' + show.genres }}</div>
+  </div>
 </template>
