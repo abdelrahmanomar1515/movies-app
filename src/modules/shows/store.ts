@@ -12,7 +12,7 @@ export function useShowsStore() {
 
   const store = reactive({
     searchTerm: "",
-    selectedGenre: "" as Genre,
+    selectedGenres: [] as Genre[],
     showsLoading,
     showsError,
     showsResponse,
@@ -25,6 +25,10 @@ export function useShowsStore() {
     store.searchTerm = term;
   };
 
+  const setSelectedGenres = (genres: Genre[]) => {
+    store.selectedGenres = genres;
+  };
+
   const shows = computed(() => {
     if (!store.showsResponse) {
       return [];
@@ -32,16 +36,20 @@ export function useShowsStore() {
     return store.showsResponse.filter(
       (show) =>
         showByNameFilter(show, store.searchTerm.trim()) &&
-        showByGenreFilter(show, store.selectedGenre)
+        showByGenresFilter(show, store.selectedGenres)
     );
   });
 
-  return { store, shows, setSearchTerm };
+  return { store, shows, setSearchTerm, setSelectedGenres };
 }
+
+export const GENRES = Object.values(Genre);
 
 const showByNameFilter = (show: Show, searchTerm: string): boolean =>
   !searchTerm ||
   show.name.toLowerCase().includes(searchTerm.toLocaleLowerCase());
 
-const showByGenreFilter = (show: Show, genre: Genre) =>
-  !genre || show.genres.includes(genre);
+const showByGenresFilter = (show: Show, genres: Genre[]) =>
+  !genres ||
+  !genres.length ||
+  show.genres.some((genre) => genres.includes(genre));

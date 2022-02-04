@@ -1,10 +1,14 @@
 <script setup lang="ts">
-import { darkTheme, NCard, NConfigProvider } from 'naive-ui';
+import { darkTheme, NCard, NConfigProvider } from "naive-ui";
 </script>
 
 <template>
   <NConfigProvider :theme="darkTheme">
-    <NCard class="container">
+    <NCard
+      class="container"
+      :bordered="false"
+      :content-style="{ padding: 0, margin: 0 }"
+    >
       <router-view></router-view>
     </NCard>
   </NConfigProvider>

@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { Show } from '../types';
-import ShowCard from './ShowCard.vue';
+import { Show } from "../types";
+import ShowCard from "./ShowCard.vue";
 
-defineProps<{ shows: Show[] }>()
-
+defineProps<{ shows: Show[] }>();
 </script>
 
 <template>

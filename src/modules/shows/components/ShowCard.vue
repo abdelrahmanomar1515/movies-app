@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { NCard } from 'naive-ui';
-import { RouterLink } from 'vue-router';
-import { Show } from '../types';
+import { NCard } from "naive-ui";
+import { RouterLink } from "vue-router";
+import { Show } from "../types";
 
-defineProps<{ show: Show, infoLink: string }>()
-
+defineProps<{ show: Show; infoLink: string }>();
 </script>
 
 <template>
@@ -16,5 +15,4 @@ defineProps<{ show: Show, infoLink: string }>()
   </NCard>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
