@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { debounce } from "@/utils/debounce";
-import { NEmpty, NSpace } from "naive-ui";
+import { NEmpty } from "naive-ui";
 import GenreSelect from "../components/GenreSelect.vue";
 import Search from "../components/Search.vue";
 import ShowsList from "../components/ShowsList.vue";
@@ -49,7 +49,6 @@ const genres = GENRES;
   gap: 20px;
   > * {
     max-width: 500px;
-    min-width: 250px;
     flex: 1 1 250px;
   }
 }

@@ -18,5 +18,3 @@ defineProps<{ show: Show; infoLink: string }>();
     <RouterLink :to="infoLink" tag="button">More Info</RouterLink>
   </NCard>
 </template>
-
-<style scoped></style>
