@@ -7,7 +7,11 @@ defineProps<{ show: Show; infoLink: string }>();
 </script>
 
 <template>
-  <NCard class="card" :title="show.name" size="small">
+  <NCard
+    class="card"
+    :title="`${show.name} (${show.rating.average})`"
+    size="small"
+  >
     <template #cover>
       <img :src="show.image.medium" />
     </template>
