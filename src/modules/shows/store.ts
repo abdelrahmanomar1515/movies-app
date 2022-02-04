@@ -18,7 +18,7 @@ export function useShowsStore() {
     showsResponse,
   });
 
-  // This will automatically fetch initial data from movies api
+  // This will automatically fetch initial data from shows api
   getShows();
 
   const setSearchTerm = (term: string) => {
